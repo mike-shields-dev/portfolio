@@ -1,0 +1,59 @@
+@import "../index.css";
+
+.Nav {
+  height: var(--navbar-thickness);
+  width: 100%;
+  position: fixed;
+  bottom: -1px;
+  background: #000;
+  z-index: 1;
+}
+
+.List {
+  height: inherit;
+  width: inherit;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  place-content: center;
+}
+
+.ListItem {
+  list-style: none;
+  height: calc(var(--navbar-thickness) - 1rem);
+  display: grid;
+}
+
+.NavLink {
+  grid-area: 1 / -1;
+  display: grid;
+  height: 100%;
+  aspect-ratio: 1;
+  text-decoration: none;
+  color: var(--clr-a);
+  place-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.NavLinkActive {
+  color: var(--clr-e);
+}
+
+@media (orientation: landscape) {
+  .Nav {
+    right: 0;
+    bottom: 0;
+    width: var(--navbar-thickness);
+    height: 100vh;
+  }
+
+  .List {
+    grid-auto-flow: row;
+    gap: 1rem;
+  }
+
+  .NavLink {
+    width: 100%;
+  }
+}

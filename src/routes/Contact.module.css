@@ -1,0 +1,70 @@
+.contact {
+  height: inherit;
+  display: grid;
+  grid-template-rows: 3rem 3rem min-content;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+}
+
+.cta {
+  text-align: center;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+}
+
+.socialLink {
+  color: currentColor;
+  height: var(--icon-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+
+.Form {
+  display: grid;
+  gap: 1rem;
+}
+
+.SubmitBttn {
+  margin-top: 1rem;
+  display: grid;
+  height: 3rem;
+  aspect-ratio: 1;
+  place-items: center;
+  justify-self: center;
+  background: none;
+}
+
+.SubmitBttnChild {
+  grid-area: 1 / -1;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .Form {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Form {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Form {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Contact {
+    width: 40%;
+  }
+}

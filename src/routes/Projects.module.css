@@ -1,0 +1,136 @@
+@import "../index.css";
+
+.Projects {
+  height: inherit;
+  display: grid;
+}
+
+.ProjectArticle {
+  display: grid;
+  grid-template-rows: 2rem max-content auto 2rem;
+  grid-template-areas:
+    "header"
+    "image"
+    "desc"
+    "tech";
+  padding: 1.5rem;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.ProjectArticle:nth-child(2n) {
+  backdrop-filter: brightness(0.8);
+}
+
+.ProjectHeader {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.ProjectImage {
+  grid-area: image;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 0.5rem;
+}
+
+.ProjectLink {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  color: currentColor;
+}
+
+.ProjectDescription {
+  grid-area: desc;
+  align-self: stretch;
+}
+
+.ProjectTechnologies {
+  grid-area: tech;
+  display: flex;
+}
+
+.ProjectTechnology {
+  display: block;
+  margin: 0 0.25rem;
+}
+
+@media screen and (min-width: 600px) {
+  .ProjectArticle {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem min-content 2rem;
+    grid-template-areas:
+      "header header"
+      "image desc"
+      "image tech";
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Projects {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ProjectArticle {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem max-content auto 2rem;
+    grid-template-areas:
+      "header"
+      "image"
+      "desc"
+      "tech";
+    align-items: stretch;
+  }
+
+  .ProjectArticle:nth-child(2n) {
+    backdrop-filter: unset;
+  }
+
+  .ProjectArticle:nth-child(2) {
+    border-radius: 0 0 0 1rem;
+  }
+
+  .ProjectArticle:nth-child(6n - 3) {
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .ProjectArticle:nth-child(6n) {
+    border-radius: 1rem 0 0 0;
+  }
+
+  .ProjectArticle:nth-child(4n-2),
+  .ProjectArticle:nth-child(4n-2) + 
+  .ProjectArticle {
+    backdrop-filter: brightness(0.8);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ProjectArticle:nth-child(4n-2),
+  .ProjectArticle:nth-child(4n-2) + .ProjectArticle {
+    backdrop-filter: unset;
+  }
+
+  .ProjectArticle:nth-child(2n) {
+    backdrop-filter: brightness(0.8);
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .ProjectArticle:nth-child(4n) {
+    border-radius: 0 1rem 0 0;
+  }
+
+  .ProjectArticle:nth-child(6n) {
+    border-radius: 1rem 0 0 0;
+  }
+}
