@@ -1,0 +1,15 @@
+.ProjectPreview {
+  grid-area: preview;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 0.5rem;
+  display: grid;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.ProjectPreview > * {
+  grid-area: 1 / 1;
+  width: 100%;
+}
